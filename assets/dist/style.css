@@ -1574,4 +1574,69 @@ form input[type="submit"]:hover {
 .contact-area .contact-wrap .contact-info .info-wrap .info-item:not(:first-child) h5 span {
   text-transform: lowercase;
 }
+
+/* Footer Area CSS */
+.footer-area {
+  background-color: #333333;
+  color: white;
+}
+
+.footer-area .footer-wrap {
+  text-align: center;
+}
+
+.footer-area .footer-wrap .footer-social {
+  padding: 2.5rem 0 2rem;
+  color: #dedede;
+}
+
+@media (min-width: 87.5em) {
+  .footer-area .footer-wrap .footer-social {
+    padding: 3rem 0 2rem;
+  }
+}
+
+.footer-area .footer-wrap .footer-social h4 {
+  font-weight: 700;
+  text-shadow: 0 0.125rem 0.25rem rgba(51, 51, 51, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.footer-area .footer-wrap .footer-social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-area .footer-wrap .footer-social ul li:not(:last-child) {
+  margin-right: 0.875rem;
+}
+
+.footer-area .footer-wrap .footer-social ul li a i {
+  font-size: 0.875rem;
+}
+
+.footer-area .footer-wrap .footer-copyright {
+  border-top: 0.0625rem solid #dedede;
+  padding: 2rem 0 2.5rem;
+}
+
+@media (min-width: 87.5em) {
+  .footer-area .footer-wrap .footer-copyright {
+    padding: 2rem 0 3rem;
+  }
+}
+
+.footer-area .footer-wrap .footer-copyright p {
+  text-transform: capitalize;
+  font-size: 0.865rem;
+  font-weight: 300;
+  color: #dedede;
+}
 /*# sourceMappingURL=style.css.map */
