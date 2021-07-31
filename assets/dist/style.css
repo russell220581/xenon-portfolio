@@ -671,6 +671,8 @@ form input[type="submit"]:hover {
 
 .header-area.sticky {
   background-color: white;
+  -webkit-box-shadow: 0 0.25rem 0.75rem rgba(51, 51, 51, 0.3);
+          box-shadow: 0 0.25rem 0.75rem rgba(51, 51, 51, 0.3);
 }
 
 .header-area.sticky .header-wrap {

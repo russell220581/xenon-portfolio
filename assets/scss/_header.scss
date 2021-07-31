@@ -167,6 +167,7 @@
 
     &.sticky {
         background-color: $white;
+        box-shadow: 0 0.25rem 0.75rem $shadow;
        
         .header-wrap {
             padding: 0.625rem 0;
