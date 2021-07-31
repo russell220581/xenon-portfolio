@@ -1,0 +1,85 @@
+/* Expertise Area CSS */
+.expertise-area {
+    .expertise-wrap {
+        .timeline-list {  
+            
+            @include breakpoint-up(medium) {
+                position: relative;
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0.125rem;
+                    height: 100%;
+                    background-color: $main-color;
+                }
+            }
+            
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 1.875rem;
+                }
+
+                @include breakpoint-up(medium) {
+                    position: relative;
+                    clear: both;
+                    overflow: hidden;
+                    
+                    &::before {
+                        content: "\f0a3";
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 1.125rem;
+                        font-weight: 600;
+                        color: $main_color;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    &:nth-child(even) {                      
+                        .timeline-content {
+                            float: right;
+                            text-align: inherit;
+                        }                                         
+                    }
+                }
+
+                .timeline-content {                
+                    border: 0.125rem solid $main_color;
+                    padding: 1.25rem;
+                    width: auto;
+                    text-align: center;
+                    &:not(:last-child) {
+                        margin-bottom: 1.875rem;
+                    }
+
+                    @include breakpoint-up(medium) {
+                        width: 45%;
+                        text-align: right;
+                    }
+
+                    span {
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        color: $main_color;
+                    }
+
+                    h4 {
+                        font-weight: 700;
+                        margin: 0.375rem 0 0.5rem;
+
+                        @include breakpoint-down(small) {
+                            margin: 0.375rem 0;
+                        }
+                    }
+    
+                }
+            }
+
+        }
+    }
+}

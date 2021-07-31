@@ -1,0 +1,27 @@
+/* Statistics Area CSS */
+.statistic-area {
+    background-image: url(../img/cta/cta-back.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+
+    .statistic-wrap {
+        .statistic-item {
+            text-align: center;
+
+            i {
+                font-size: 3rem;
+                margin-bottom: 1.25rem;
+            }
+
+            h3 {
+                font-weight: 700;
+            }
+
+            p {
+                font-size: 1.25rem;
+                font-weight: 600;
+                text-transform: capitalize;
+            }
+        }
+    }
+}

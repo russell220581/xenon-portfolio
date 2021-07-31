@@ -1,0 +1,69 @@
+/* Portfolio Area CSS */
+.portfolio-area {
+    .portfolio-wrap {
+        .portfolio-item {
+            position: relative;
+
+            .portfolio-image {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .portfolio-hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;                
+                transition: transform 300ms ease-out;
+
+                @include breakpoint-up(large) {
+                    transform: scale(0);
+                }
+                
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: $dark;
+                    opacity: 0.85;
+                }
+
+                .portfolio-content {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    text-align: center;
+                    color: $white;                    
+                    position: relative;
+                    z-index: 10;
+
+                    i {
+                        font-size: 2rem;
+                        margin-bottom: 1.125rem;
+                    }
+
+                    h4 {
+                        span {
+                            display: block;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            margin-top: 0.625rem;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .portfolio-hover {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}

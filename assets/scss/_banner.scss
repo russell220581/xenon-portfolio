@@ -1,0 +1,95 @@
+/* Banner Area CSS */
+.banner-area {
+    color: $white;
+    background: url(../img/banner/banner-back.jpg) no-repeat center center / cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $dark;
+        opacity: 0.9;
+    }
+
+    .banner-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        z-index: 10;
+
+        h1 {
+            font-size: 2.375rem;
+            text-transform: capitalize;
+            text-shadow: 0.25rem 0.25rem 0.75rem $dark;
+            text-align: center;
+            line-height: 1.2;
+
+            @include breakpoint-up(medium) {
+                font-size: 4.25rem;
+            }
+
+            @include breakpoint-up(large) {
+                font-size: 5rem;
+            }
+
+            @include breakpoint-up(xlarge) {
+                font-size: 6rem;
+            }
+        }
+
+        .banner-text {
+            margin: 1.25rem 0 2rem;
+
+            @include breakpoint-up(medium) {                
+                margin: 1.5rem 0 3rem;
+            }
+
+            @include breakpoint-up(xlarge) {
+                margin: 2rem 0 4rem;
+            }
+            
+            span {
+                position: relative;
+                display: inline-block;
+                font-size: 1.375rem;
+                font-weight: 400;
+                text-shadow: 0.125rem 0.125rem 0.5rem $dark;
+                
+                @include breakpoint-down(small) {
+                    font-size: 0.875rem;
+                }
+
+                &:not(:last-child) {
+                    padding-right: 0.75rem;
+                    margin-right: 1.5rem;
+
+                    @include breakpoint-down(small) {
+                        padding-right: 0.5rem;
+                        margin-right: 1rem;
+                    }
+                    
+                    &::after {
+                        content: "\f005";
+                        font-family: "Font Awesome 5 Free";
+                        font-size: 0.875rem;
+                        font-weight: 600;
+                        color: $blue_color;
+                        position: absolute;
+                        top: 50%;
+                        right: -1rem;
+                        transform: translateY(-50%);
+                    }
+                }                
+            }
+        }
+    }
+}

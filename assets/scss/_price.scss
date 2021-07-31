@@ -1,0 +1,73 @@
+/* Price Area CSS */
+.price-area {
+    background-color: $bg_gray;
+
+    .price-wrap {
+        @include breakpoint-down(medium) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include breakpoint-down(small) {
+            grid-template-columns: 1fr;
+        }
+                
+        .price-item {
+            background-color: $white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+            text-align: center;          
+            box-shadow: 0 0 0.875rem $shadow;
+
+            @include breakpoint-up(large) {
+                padding: 4rem 0;
+            }
+
+            @include breakpoint-up(xlarge) {
+                padding: 6rem 0;
+            }
+
+            .content-wrap {   
+                h4 {
+                    margin: 1rem 0;
+                    font-size: 2.25rem;
+                    font-weight: 800;
+
+                    @include breakpoint-up(large) {
+                        margin: 1.75rem 0;
+                        font-size: 2.75rem;
+                    }
+                }                
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }    
+                ul {
+                    margin-bottom: 1.5rem;
+
+                    @include breakpoint-up(medium) {
+                        margin-bottom: 2rem;
+                    }
+
+                    @include breakpoint-up(xlarge) {
+                        margin-bottom: 3rem;
+                    }
+
+                    li {
+                        &:not(:last-child) {
+                            margin-bottom: 0.625rem;
+                        }
+
+                        @include breakpoint-down(medium) {
+                            font-size: 0.875rem;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+    }
+}

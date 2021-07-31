@@ -1,0 +1,215 @@
+/* Header Area CSS */
+.header-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    transition: background-color 250ms ease-in-out;
+
+    .header-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        transition: padding 250ms ease-out;
+
+        @include breakpoint-up(medium) {
+            padding: 1.25rem 0;
+        }
+
+        @include breakpoint-up(xlarge) {
+            padding: 2.5rem 0;
+        }
+        
+        .logo {
+            position: relative;
+            width: 3rem;
+            height: 3rem;
+            z-index: 10;
+            transition: all 200ms ease-in-out;
+
+            @include breakpoint-down(small) {
+                width: 2.25rem;
+                height: 2.25rem;
+            }
+
+            &::before {
+                content: "xenon";
+                position: absolute;
+                right: -5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.25rem;
+                font-weight: 800;
+                color: $white;
+                text-transform: uppercase;
+
+                @include breakpoint-down(small) {
+                    right: -4.875rem
+                }
+            }
+            
+        }
+        .menu {
+            ul {
+                display: flex;
+
+                li {
+                    padding: 0 0.625rem;
+                    
+                    &:last-child {
+                        padding-right: 0;
+                    }
+
+                    a {
+                        color: $white;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        letter-spacing: 0.0625rem;
+                        transition: font-size 200ms ease-in-out;
+
+                        &:hover {
+                            color: $blue_color;
+                        }
+                    }
+                }
+            }
+
+            @include breakpoint-down(medium) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: $dark;
+                color: $white;
+                transform: translateX(-100%);
+                transition: transform 350ms ease-in-out;
+
+                ul {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+
+                    li {
+                        margin: 0.375rem 0;
+                        padding: 0.375rem 0;
+
+                        a {
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .mobile-menu {
+            display: none;
+
+            @include breakpoint-down(medium) {
+                display: block;
+                
+                > span {
+                    position: relative;
+                    display: block;
+                    width: 2rem;
+                    height: 0.1875rem;
+                    background-color: $white;
+                    cursor: pointer;
+                    transition: transform 300ms ease-in-out;
+
+                    &::before, &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 2rem;
+                        height: 0.1875rem;
+                        background-color: $white;
+                    }
+
+                    &::before {
+                        transform: translateY(-0.5rem);
+                    }
+
+                    &::after {
+                        transform: translateY(0.5rem);
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        .menu {
+            transform: translateX(0);
+        }
+
+        .mobile-menu {
+            > span {
+                background-color: transparent;
+
+                &::before {
+                    transform: rotate(45deg) translateY(0);
+                    background-color: $white;
+                }
+
+                &::after {
+                    transform: rotate(-45deg) translateY(0);
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &.sticky {
+        background-color: $white;
+       
+        .header-wrap {
+            padding: 0.625rem 0;
+            
+            .logo {
+                width: 2.5rem;
+                height: 2.5rem;
+
+                &::before {
+                    color: $dark;
+                }
+            }
+
+            .menu {
+                li {
+                    a {
+                        color: $dark !important;
+                        font-size: 0.875rem;
+                        font-weight: 700;
+                    }
+                }                
+            }
+
+            .mobile-menu {
+                > span {
+                    background-color: $dark;
+
+                    &::before, &::after {
+                        background-color: $dark;
+                    }
+                }
+            }
+        }
+
+        &.open {
+            .mobile-menu {
+                > span {
+                    &::before, &::after {
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+        
+    }
+}
